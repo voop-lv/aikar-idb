@@ -1,5 +1,5 @@
 plugins {
-    id 'io.franzbecker.gradle-lombok' version '4.0.0' apply false
+    id 'io.franzbecker.gradle-lombok' version '5.0.0' apply false
 }
 
 import io.franzbecker.gradle.lombok.task.DelombokTask
@@ -10,13 +10,13 @@ subprojects {
     apply plugin: 'io.franzbecker.gradle-lombok'
 
     group 'co.aikar'
-    version '1.0.0-SNAPSHOT'
+    version '1.0.1-VOOPLV-SNAPSHOT'
 
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
 
     lombok {
-        version = '1.18.12'
+        version = '1.18.24'
         sha256 = ''
     }
 
@@ -76,16 +76,16 @@ subprojects {
         dependsOn uploadArchives
     }
 
-    if(project.hasProperty('aikarRepoUser') && project.hasProperty('aikarRepoPass')) {
+    if(project.hasProperty('VoopLVUsername') && project.hasProperty('VoopLVPassword')) {
         uploadArchives {
             repositories {
                 mavenDeployer {
-                    repository(url: 'https://repo.aikar.co/content/repositories/aikar-snapshots/') {
-                        authentication(userName: aikarRepoUser, password: aikarRepoPass)
+                    repository(url: 'https://repo.voop.lv/repository/vooplv-public/') {
+                        authentication(userName: VoopLVUsername, password: VoopLVPassword)
                     }
 
-                    snapshotRepository(url: 'https://repo.aikar.co/content/repositories/aikar-snapshots/') {
-                        authentication(userName: aikarRepoUser, password: aikarRepoPass)
+                    snapshotRepository(url: 'https://repo.voop.lv/repository/vooplv-public/') {
+                        authentication(userName: VoopLVUsername, password: VoopLVPassword)
                     }
                 }
             }
