@@ -10,7 +10,7 @@ Built currently on top of Hikari Connection Pool.
 
 ## Getting Started
 
-**Version**: `1.0.0-SNAPSHOT`
+**Version**: `1.0.1-VOOPLV-SNAPSHOT` **(UNOFFICIAL)**
 
 Project Setup: [Maven](https://github.com/aikar/db/wiki/Maven-Setup), [Gradle](https://github.com/aikar/db/wiki/Gradle-Setup)
 
