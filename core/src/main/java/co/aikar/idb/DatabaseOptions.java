@@ -3,6 +3,7 @@ package co.aikar.idb;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.ExecutorService;
 import java.util.function.Consumer;
@@ -51,7 +52,26 @@ public class DatabaseOptions {
     ExecutorService executor;
 
     public static class DatabaseOptionsBuilder {
-        public DatabaseOptionsBuilder mysql(@NonNull String user, @NonNull String pass, @NonNull String db, @NonNull String hostAndPort) {
+
+        public DatabaseOptionsBuilder postgresSQL(@NonNull String user, @NonNull String pass, @NonNull String db, @Nullable String hostAndPort) {
+            if (hostAndPort == null) {
+                hostAndPort = "localhost:5432";
+            }
+
+            this.user = user;
+            this.pass = pass;
+
+            if (dataSourceClassName == null) tryDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
+            if (dataSourceClassName == null) tryDataSourceClassName("com.mysql.cj.jdbc.MysqlDataSource");
+
+            if (driverClassName == null) tryDriverClassName("org.postgresql.Driver");
+
+            if (defaultIsolationLevel == null) defaultIsolationLevel = "TRANSACTION_READ_COMMITTED";
+            this.dsn = "postgresql://" + hostAndPort + "/" + db;
+            return this;
+        }
+
+        public DatabaseOptionsBuilder mysql(@NonNull String user, @NonNull String pass, @NonNull String db, @Nullable String hostAndPort) {
             if (hostAndPort == null) {
                 hostAndPort = "localhost:3306";
             }
