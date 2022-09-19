@@ -30,7 +30,7 @@ public class HikariPooledDatabase extends BaseDatabase {
             config.addDataSourceProperty("password", options.pass);
         }
 
-        if (options.useOptimizations && options.dsn.startsWith("mysql")) {
+        if (options.useOptimizations && options.dsn.startsWith("mysql") || options.dsn.startsWith("postgresql")) {
             config.addDataSourceProperty("cachePrepStmts", true);
             config.addDataSourceProperty("prepStmtCacheSize", 250);
             config.addDataSourceProperty("prepStmtCacheSqlLimit", 2048);
