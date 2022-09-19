@@ -61,9 +61,8 @@ public class DatabaseOptions {
             this.user = user;
             this.pass = pass;
 
-            if (dataSourceClassName == null) tryDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
-            if (dataSourceClassName == null) tryDataSourceClassName("com.mysql.cj.jdbc.MysqlDataSource");
-
+            //if (dataSourceClassName == null) tryDataSourceClassName("org.postgresql.ds.PGSimpleDataSource");
+            if (dataSourceClassName == null) tryDataSourceClassName("org.postgresql.jdbc3.Jdbc3PoolingDataSource");
             if (driverClassName == null) tryDriverClassName("org.postgresql.Driver");
 
             if (defaultIsolationLevel == null) defaultIsolationLevel = "TRANSACTION_READ_COMMITTED";
