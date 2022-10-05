@@ -27,6 +27,8 @@ public class DatabaseOptions {
     String dataSourceClassName;
     String defaultIsolationLevel;
 
+    int minAsyncThreadsCount = 2;
+
     @Builder.Default boolean favorDataSourceOverDriver = true;
 
     @Builder.Default String poolName = "DB";
@@ -35,7 +37,7 @@ public class DatabaseOptions {
     /**
      * For Async queries, minimum threads in the pool to use.
      */
-    @Builder.Default int minAsyncThreads = Math.min(Runtime.getRuntime().availableProcessors(), 2);
+    @Builder.Default int minAsyncThreads = Math.min(Runtime.getRuntime().availableProcessors(), this.minAsyncThreadsCount);
     /**
      * For Async queries, maximum threads in the pool to use.
      */
@@ -141,6 +143,11 @@ public class DatabaseOptions {
                 throw new RuntimeException(e);
             }
             this.dataSourceClassName = className;
+            return this;
+        }
+
+        public DatabaseOptionsBuilder setMinAsyncThread(int value) {
+            this.minAsyncThreadsCount = value;
             return this;
         }
     }
