@@ -38,7 +38,7 @@ public class DatabaseOptions {
     /**
      * For Async queries, minimum threads in the pool to use.
      */
-    @Builder.Default int minAsyncThreads = Math.min(Runtime.getRuntime().availableProcessors(), this.minAsyncThreadsCount);
+    @Builder.Default int minAsyncThreads = Math.min(Runtime.getRuntime().availableProcessors(), minAsyncThreadsCount);
     /**
      * For Async queries, maximum threads in the pool to use.
      */
