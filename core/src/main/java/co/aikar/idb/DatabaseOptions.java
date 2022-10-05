@@ -27,7 +27,7 @@ public class DatabaseOptions {
     String dataSourceClassName;
     String defaultIsolationLevel;
 
-    @Builder.Default int minAsyncThreadsCount = 2;
+    private int minAsyncThreadsCount = 2;
     @Builder.Default boolean displayConnectionInfo = true;
 
     @Builder.Default boolean favorDataSourceOverDriver = true;
@@ -38,7 +38,7 @@ public class DatabaseOptions {
     /**
      * For Async queries, minimum threads in the pool to use.
      */
-    @Builder.Default int minAsyncThreads = Math.min(Runtime.getRuntime().availableProcessors(), minAsyncThreadsCount);
+    @Builder.Default int minAsyncThreads = Math.min(Runtime.getRuntime().availableProcessors(), this.minAsyncThreadsCount);
     /**
      * For Async queries, maximum threads in the pool to use.
      */
@@ -103,6 +103,11 @@ public class DatabaseOptions {
 
             this.dsn = "sqlite:" + fileName;
 
+            return this;
+        }
+
+        public DatabaseOptionsBuilder setMinAsyncThreadsCount(int value) {
+            this.minAsyncThreadsCount = value;
             return this;
         }
 
