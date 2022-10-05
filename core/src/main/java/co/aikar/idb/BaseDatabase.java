@@ -46,7 +46,9 @@ public class BaseDatabase implements Database {
         if (this.logger == null) {
             this.logger = Logger.getLogger(options.poolName);
         }
-        this.logger.info("Connecting to Database: " + options.dsn);
+        if (options.displayConnectionInfo) {
+            this.logger.info("Attempting Connect to Database: " + options.dsn);
+        }
     }
 
     public void close(long timeout, TimeUnit unit) {
@@ -64,6 +66,9 @@ public class BaseDatabase implements Database {
             } finally {
                 dataSource = null;
             }
+        }
+        if (options.displayConnectionInfo) {
+            this.logger.info("Connection closed for Database: " + options.dsn);
         }
     }
 

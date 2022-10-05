@@ -27,7 +27,8 @@ public class DatabaseOptions {
     String dataSourceClassName;
     String defaultIsolationLevel;
 
-    int minAsyncThreadsCount = 2;
+    @Builder.Default int minAsyncThreadsCount = 2;
+    @Builder.Default boolean displayConnectionInfo = true;
 
     @Builder.Default boolean favorDataSourceOverDriver = true;
 
@@ -143,11 +144,6 @@ public class DatabaseOptions {
                 throw new RuntimeException(e);
             }
             this.dataSourceClassName = className;
-            return this;
-        }
-
-        public DatabaseOptionsBuilder setMinAsyncThread(int value) {
-            this.minAsyncThreadsCount = value;
             return this;
         }
     }
