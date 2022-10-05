@@ -4,6 +4,7 @@
 .mtj.tmp/
 
 META-INF
+.idea/
 
 .idea/workspace.xml
 .idea/dictionaries
