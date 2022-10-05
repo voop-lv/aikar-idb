@@ -53,3 +53,40 @@ As with all my other public projects
 IDB (c) Daniel Ennis (Aikar) 2014-2018.
 
 IDB is licensed [MIT](https://tldrlegal.com/license/mit-license). See [LICENSE](LICENSE)
+
+## Repo
+This repo is available on a public maven repo server
+### Gradle
+```kotlin
+repositories {
+    maven { 
+        url = uri("https://repo.voop.lv/repository/vooplvPublic/") 
+    }
+}
+```
+```kotlin
+dependencies {
+    api("co.aikar:idb-core:1.0.1-VOOPLV-SNAPSHOT")
+    //or
+    implementation("co.aikar:idb-core:1.0.1-VOOPLV-SNAPSHOT")
+}
+```
+### Maven
+```xml
+<repositories>
+    <repository>
+        <id>vooplvPublic</id>
+        <url>"https://repo.voop.lv/repository/vooplvPublic/</url>
+    </repository>
+</repositories>
+```
+```xml
+<dependencies>
+    <dependency>
+        <groupId>co.aikar</groupId>
+        <artifactId>idb-core</artifactId>
+        <version>1.0.1-VOOPLV-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+```
+
