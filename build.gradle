@@ -10,13 +10,13 @@ subprojects {
     apply plugin: 'io.franzbecker.gradle-lombok'
 
     group 'co.aikar'
-    version '1.0.1-VOOPLV-SNAPSHOT'
+    version '1.1-VOOPLV-SNAPSHOT'
 
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
 
     lombok {
-        version = '1.18.24'
+        version = '1.18.26'
         sha256 = ''
     }
 
