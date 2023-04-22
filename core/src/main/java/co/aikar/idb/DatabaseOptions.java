@@ -96,13 +96,17 @@ public class DatabaseOptions {
 
         public DatabaseOptionsBuilder sqlite(@NonNull String fileName) {
             if (defaultIsolationLevel == null) defaultIsolationLevel = "TRANSACTION_SERIALIZABLE";
-
             if (dataSourceClassName == null) tryDataSourceClassName("org.sqlite.SQLiteDataSource");
-
             if (driverClassName == null) tryDriverClassName("org.sqlite.JDBC");
-
             this.dsn = "sqlite:" + fileName;
+            return this;
+        }
 
+        public DatabaseOptionsBuilder h2(@NonNull String fileName) {
+            if (defaultIsolationLevel == null) defaultIsolationLevel = "TRANSACTION_SERIALIZABLE";
+            if (dataSourceClassName == null) tryDataSourceClassName("org.h2.jdbcx.JdbcDataSource");
+            if (driverClassName == null) tryDriverClassName("org.h2.Driver");
+            this.dsn = "jdbc:h2:file:" + fileName + ";mode=MySQL;DB_CLOSE_ON_EXIT=TRUE;FILE_LOCK=NO";
             return this;
         }
 
