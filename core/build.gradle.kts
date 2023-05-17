@@ -8,16 +8,6 @@ dependencies {
     compileOnly("com.zaxxer:HikariCP:2.4.1")
     compileOnly("org.jetbrains:annotations:15.0")
 }
-/*
-tasks.`publishVooplv-publicPublicationToVoopLVPublicRepository` {
-    dependsOn(":core:jar")
-}
-
-tasks.`publishVooplv-publicPublicationToMavenLocal` {
-    dependsOn(":core:jar")
-}
-
- */
 
 tasks.shadowJar {
     archiveBaseName.set(project.description)
