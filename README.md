@@ -1,3 +1,6 @@
+# Fork notice
+This project is forked from already existing project [Aikar IDB](https://github.com/aikar/db). This fork include some of the patches and including H2, Postgres SQL support and other stuff.
+
 # IDB - Intuitive Database Wrapper
 
 This is my JDBC Database Wrapper, with the intent on providing a clean intuitive API, for access to a JDBC database,
@@ -10,7 +13,7 @@ Built currently on top of Hikari Connection Pool.
 
 ## Getting Started
 
-**Version**: `1.0.1-VOOPLV-SNAPSHOT` **(UNOFFICIAL)**
+**Version**: `1.1-SNAPSHOT` **(UNOFFICIAL/ FORKED PROJECT)**
 
 Project Setup: [Maven](https://github.com/aikar/db/wiki/Maven-Setup), [Gradle](https://github.com/aikar/db/wiki/Gradle-Setup)
 
@@ -66,9 +69,9 @@ repositories {
 ```
 ```kotlin
 dependencies {
-    api("co.aikar:idb-core:1.0.1-VOOPLV-SNAPSHOT")
+    api("co.aikar:idb-core:1.1-SNAPSHOT")
     //or
-    implementation("co.aikar:idb-core:1.0.1-VOOPLV-SNAPSHOT")
+    implementation("co.aikar:idb-core:1.1-SNAPSHOT")
 }
 ```
 ### Maven
@@ -85,7 +88,7 @@ dependencies {
     <dependency>
         <groupId>co.aikar</groupId>
         <artifactId>idb-core</artifactId>
-        <version>1.0.1-VOOPLV-SNAPSHOT</version>
+        <version>1.1-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
