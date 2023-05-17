@@ -17,6 +17,7 @@ META-INF
 .idea/gradle.xml
 .idea/compiler.xml
 .idea/jarRepositories.xml
+.idea/
 **/*.iml
 /*/.idea
 # Log file
