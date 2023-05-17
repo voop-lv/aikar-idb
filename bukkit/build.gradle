@@ -1,4 +1,0 @@
-dependencies {
-    compile project(':idb-core')
-    compileOnly group: 'org.bukkit', name: 'bukkit', version: '1.12-R0.1-SNAPSHOT'
-}
