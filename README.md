@@ -73,9 +73,9 @@ repositories {
 ```
 ```kotlin
 dependencies {
-    api("co.aikar:idb-core:1.1-SNAPSHOT")
+    api("co.aikar.idb:core:1.1-SNAPSHOT")
     //or
-    implementation("co.aikar:idb-core:1.1-SNAPSHOT")
+    implementation("co.aikar.idb:core:1.1-SNAPSHOT")
 }
 ```
 ### Maven
@@ -90,8 +90,8 @@ dependencies {
 ```xml
 <dependencies>
     <dependency>
-        <groupId>co.aikar</groupId>
-        <artifactId>idb-core</artifactId>
+        <groupId>co.aikar.idb</groupId>
+        <artifactId>core</artifactId>
         <version>1.1-SNAPSHOT</version>
     </dependency>
 </dependencies>
