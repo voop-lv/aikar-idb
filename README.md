@@ -1,6 +1,10 @@
 # Fork notice
 This project is forked from already existing project [Aikar IDB](https://github.com/aikar/db). This fork include some of the patches and including H2, Postgres SQL support and other stuff.
 
+Some of the changes includes from other forks such as from:
+* [TheNewEconomy/db](https://github.com/TheNewEconomy/db)
+* [CyberFlameGO/db](https://github.com/CyberFlameGO/db) or [Gabik21/db](https://github.com/Gabik21/db)
+
 # IDB - Intuitive Database Wrapper
 
 This is my JDBC Database Wrapper, with the intent on providing a clean intuitive API, for access to a JDBC database,
