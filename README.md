@@ -61,6 +61,10 @@ IDB (c) Daniel Ennis (Aikar) 2014-2018.
 
 IDB is licensed [MIT](https://tldrlegal.com/license/mit-license). See [LICENSE](LICENSE)
 
+## Building project
+
+To other to build the jar file of this project you much run this command `gradle clean shadowJar` and then locate the jar in `core/build/libs`
+
 ## Repo
 This repo is available on a public maven repo server
 ### Gradle
