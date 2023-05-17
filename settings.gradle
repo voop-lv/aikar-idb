@@ -1,6 +1,0 @@
-include 'core'
-include 'bukkit'
-rootProject.name = 'idb'
-findProject(':core')?.name = 'idb-core'
-findProject(':bukkit')?.name = 'idb-bukkit'
-
