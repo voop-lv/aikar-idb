@@ -3,8 +3,10 @@ package co.aikar.idb;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.function.Consumer;
 import java.util.logging.Logger;
@@ -94,6 +96,9 @@ public class DatabaseOptions {
             return this;
         }
 
+        public DatabaseOptionsBuilder sqlite(@NonNull File file) {
+           return this.sqlite(file.getAbsoluteFile());
+        }
         public DatabaseOptionsBuilder sqlite(@NonNull String fileName) {
             if (defaultIsolationLevel == null) defaultIsolationLevel = "TRANSACTION_SERIALIZABLE";
             if (dataSourceClassName == null) tryDataSourceClassName("org.sqlite.SQLiteDataSource");
@@ -102,6 +107,9 @@ public class DatabaseOptions {
             return this;
         }
 
+        public DatabaseOptionsBuilder h2(@NotNull File file) {
+            return this.h2(file.getAbsoluteFile());
+        }
         public DatabaseOptionsBuilder h2(@NonNull String fileName) {
             if (defaultIsolationLevel == null) defaultIsolationLevel = "TRANSACTION_SERIALIZABLE";
             if (dataSourceClassName == null) tryDataSourceClassName("org.h2.jdbcx.JdbcDataSource");
