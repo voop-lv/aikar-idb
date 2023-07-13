@@ -7,7 +7,7 @@ allprojects {
     apply(plugin = "aikar-idb-conventions")
     apply(plugin = "com.github.johnrengelman.shadow")
     apply(plugin = "java")
-    version = "1.1-SNAPSHOT"
+    version = "1.2-SNAPSHOT"
 
     group = "co.aikar.idb"
 
