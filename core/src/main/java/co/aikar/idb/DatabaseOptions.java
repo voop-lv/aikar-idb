@@ -106,7 +106,7 @@ public class DatabaseOptions {
             if (defaultIsolationLevel == null) defaultIsolationLevel = "TRANSACTION_SERIALIZABLE";
             if (dataSourceClassName == null) tryDataSourceClassName("org.h2.jdbcx.JdbcDataSource");
             if (driverClassName == null) tryDriverClassName("org.h2.Driver");
-            this.dsn = "jdbc:h2:file:" + fileName + ";mode=MySQL;DB_CLOSE_ON_EXIT=TRUE;FILE_LOCK=NO";
+            this.dsn = "h2:file:" + fileName + ";mode=MySQL;DB_CLOSE_ON_EXIT=TRUE;FILE_LOCK=NO";
             return this;
         }
 
